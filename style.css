@@ -1,0 +1,101 @@
+/* General Body Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark charcoal background */
+    color: #f0f0f0; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer sticks to bottom */
+}
+
+/* Main Header Section */
+.main-header {
+    text-align: center;
+    padding: 40px 20px 60px; /* More padding at bottom */
+    background-color: #1a1a1a; /* Match body for seamless look */
+    color: #f0f0f0;
+}
+
+.main-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em; /* Large title */
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(240, 240, 240, 0.3); /* Subtle glow */
+}
+
+.main-header .slogan {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #b0b0b0; /* Slightly desaturated  */
+}
+
+/* Emotion Grid Container (using CSS Grid for layout) */
+.emotion-grid-container {
+    display: grid;
+    /* Responsive grid: 3 columns when wide, minmax ensures responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* Space between cards */
+    padding: 20px;
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto; /* Center the grid */
+    flex-grow: 1; /* Allow grid to take available space */
+}
+
+/* Individual Emotion Card Styling - now focuses on the image link itself */
+.emotion-card {
+    text-decoration: none; /* Remove underline from link */
+    display: block; /* Make the link a block to contain the image */
+    transition: transform 0.3s ease; /* Smooth hover effects */
+    text-align: center; /* Ensures image is centered in its grid cell if smaller */
+}
+
+/* Styles for the images directly within the links */
+.emotion-card img {
+    width: 100%; /* Image fills the width of its grid cell */
+    height: 250px; /* Fixed height for consistency, adjust as needed */
+    object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+    border-radius: 12px; /* Apply rounded corners directly to the image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Shadow behind the image */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    display: block; /* Ensures image behaves like a block element */
+    margin: 0 auto; /* Centers the image if its actual width is less than 100% of cell */
+}
+
+/* Hover effect for cards - applies to the image */
+.emotion-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+}
+
+.emotion-card:hover img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
+}
+
+
+/* Main Footer Section */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Space above footer */
+    background-color: #1a1a1a;
+    color: #888; /* Dimmer text for footer */
+    font-size: 0.9em;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.5em;
+    }
+    .main-header .slogan {
+        font-size: 1em;
+    }
+    .emotion-grid-container {
+        padding: 15px;
+    }
+    .emotion-card img { /* Adjust image height for smaller screens */
+        height: 200px;
+    }
+}
